@@ -7,10 +7,52 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <!-- google font css -->
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+           
+        }
+    </style>
+
 </head>
 
 <body>
-    <p class="text-red-500">Hello, World!</p>
+    <!-- header section -->
+    <header class=" w-[80%] mx-auto">
+        <h1 class="text-[32px] font-bold text-[#002C5C]">Job Tracker</h1>
+        <div class="grid grid-cols-3 gap-4">
+            <div class="bg-amber-200 p-4 rounded-xl">
+                <p class="text-[#323B49]">Total</p>
+                <p id="totalCount">8</p>
+            </div>    
+            <div class="bg-amber-200 p-4 rounded-xl">
+                <p class="text-[#323B49]">Interview</p>
+                <p id="interviewCount">0</p>
+            </div>    
+            <div class="bg-amber-200 p-4 rounded-xl">
+                <p class="text-[#323B49]">Rejected</p>
+                <p id="rejectedCount">0</p>
+            </div>    
+        </div>
+    </header>
+
+    <!-- main section -->
+     <hr class="my-5">
+     <main class="w-[80%] mx-auto">
+        <h2>Available Jobs</h2>
+        <div class="mt-[34px]">
+            <button class="bg-[#3B82F6] text-white px-5 py-2" id="all-filter-btn">All</button>
+            <button class="bg-white px-5 py-2" id="interview-filter-btn">Interview</button>
+            <button class="bg-white px-5 py-2" id="rejected-filter-btn">Rejected</button>
+        </div>
+
+     </main>
+
 </body>
 
 </html>
