@@ -15,7 +15,7 @@
     <style>
         * {
             font-family: "Geist", sans-serif;
-           
+
         }
     </style>
 
@@ -29,21 +29,21 @@
             <div class="bg-amber-200 p-4 rounded-xl">
                 <p class="text-[#323B49]">Total</p>
                 <p id="totalCount">8</p>
-            </div>    
+            </div>
             <div class="bg-amber-200 p-4 rounded-xl">
                 <p class="text-[#323B49]">Interview</p>
                 <p id="interviewCount">0</p>
-            </div>    
+            </div>
             <div class="bg-amber-200 p-4 rounded-xl">
                 <p class="text-[#323B49]">Rejected</p>
                 <p id="rejectedCount">0</p>
-            </div>    
+            </div>
         </div>
     </header>
 
     <!-- main section -->
-     <hr class="my-5">
-     <main class="w-[80%] mx-auto">
+    <hr class="my-5 w-[80%] mx-auto">
+    <main class="w-[80%] mx-auto">
         <h2>Available Jobs</h2>
         <div class="mt-[34px]">
             <button class="bg-[#3B82F6] text-white px-5 py-2" id="all-filter-btn">All</button>
@@ -51,7 +51,34 @@
             <button class="bg-white px-5 py-2" id="rejected-filter-btn">Rejected</button>
         </div>
 
-     </main>
+        <section id="all-jobs">
+
+            <div class="card flex justify-between border">
+
+                <div class="space-y-6">
+
+                    <div>
+                        <h2 class="job-name">Mobile First Corp</h2>
+                        <p class="skills">React Native Developer</p>
+                    </div>
+                    <div>
+                        <p class="remote">Remote • Full-time • $130,000 - $175,000</p>
+                    </div>
+                    <p class="description">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    <p class="status">Not Applied</p>
+                    <div>
+                        <button class="interview-btn text-green-500 border">Interview</button>
+                        <button class="reject-btn text-red-500 border">Reject</button>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="delete-btn">delete</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
 </body>
 
