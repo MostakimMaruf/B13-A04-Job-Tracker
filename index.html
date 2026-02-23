@@ -11,6 +11,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- google font css -->
     <style>
         * {
@@ -28,34 +32,37 @@
         <div class="grid grid-cols-3 gap-4">
             <div class="bg-amber-100 p-4 rounded-xl">
                 <p class="text-[#323B49]">Total</p>
-                <p class="text-[#002C5C]" id="totalCount">0</p>
+                <p class="text-[#002C5C] font-semibold text-2xl" id="totalCount">0</p>
             </div>
             <div class="bg-pink-100 p-4 rounded-xl">
                 <p class="text-[#323B49]">Interview</p>
-                <p class="text-[#10B981]" id="interviewCount">0</p>
+                <p class="text-[#10B981] font-semibold text-2xl" id="interviewCount">0</p>
             </div>
             <div class="bg-green-100 p-4 rounded-xl">
                 <p class="text-[#323B49]">Rejected</p>
-                <p class="text-[#EF4444]" id="rejectedCount">0</p>
+                <p class="text-[#EF4444] font-semibold text-2xl" id="rejectedCount">0</p>
             </div>
         </div>
     </header>
 
     <!-- main section -->
-    <hr class="my-5 w-[80%] mx-auto">
+    <hr class="my-5 w-[80%] mx-auto border-gray-300">
     <main class="w-[80%] mx-auto">
         <div class="flex justify-between ">
             <div>
                 <h2 class="text-[#002C5C] font-semibold text-[20px]">Available Jobs</h2>
             </div>
             <div>
-                <p class="text-[#64748B]">8 jobs</p>
+                <p class="text-[#64748B]" id="jobSummary">8 jobs</p>
             </div>
         </div>
         <div class="mt-[34px] mb-6">
-            <button onclick="toggleStyle('all-filter-btn')" class="bg-[#3B82F6] text-white px-8 py-2 rounded" id="all-filter-btn">All</button>
-            <button onclick="toggleStyle('interview-filter-btn')" class="text-[#323B49] bg-gray-100 px-8 py-2 rounded" id="interview-filter-btn">Interview</button>
-            <button onclick="toggleStyle('rejected-filter-btn')" class="text-[#323B49] bg-gray-100 px-8 py-2 rounded" id="rejected-filter-btn">Rejected</button>
+            <button onclick="toggleStyle('all-filter-btn')" class="bg-[#3B82F6] text-white px-8 py-2 rounded"
+                id="all-filter-btn">All</button>
+            <button onclick="toggleStyle('interview-filter-btn')" class="text-[#323B49] bg-gray-100 px-8 py-2 rounded"
+                id="interview-filter-btn">Interview</button>
+            <button onclick="toggleStyle('rejected-filter-btn')" class="text-[#323B49] bg-gray-100 px-8 py-2 rounded"
+                id="rejected-filter-btn">Rejected</button>
         </div>
 
         <!-- filter section -->
@@ -67,7 +74,7 @@
         <section id="all-jobs" class="space-y-6">
 
             <!-- card-01 -->
-            <div class="card flex justify-between border p-6">
+            <div class="card flex justify-between rounded border border-gray-400 p-6">
 
                 <div class="space-y-5">
 
@@ -91,12 +98,14 @@
                 </div>
 
                 <div>
-                    <button class="delete-btn">delete</button>
+                    <button class="delete-btn cursor-pointer bg-gray-200 w-10 h-10 rounded-[50%] p-1.5">
+                       <i class="fa-regular fa-trash-can text-red-400"></i>
+                    </button>
                 </div>
             </div>
 
             <!-- card-02 -->
-            <div class="card flex justify-between border p-6">
+            <div class="card flex justify-between border rounded border-gray-400 p-6">
 
                 <div class="space-y-6">
 
@@ -121,12 +130,14 @@
                 </div>
 
                 <div>
-                    <button class="delete-btn">delete</button>
+                    <button class="delete-btn cursor-pointer bg-gray-200 w-10 h-10 rounded-[50%] p-1.5">
+                        <i class="fa-regular fa-trash-can text-red-400"></i>
+                    </button>
                 </div>
             </div>
 
             <!-- card-03 -->
-            <div class="card flex justify-between border p-6">
+            <div class="card flex justify-between border rounded border-gray-400  p-6">
 
                 <div class="space-y-5">
 
@@ -151,12 +162,14 @@
                 </div>
 
                 <div>
-                    <button class="delete-btn">delete</button>
+                    <button class="delete-btn cursor-pointer bg-gray-200 w-10 h-10 rounded-[50%] p-1.5">
+                       <i class="fa-regular fa-trash-can text-red-400"></i>
+                    </button>
                 </div>
             </div>
 
             <!-- card-04 -->
-            <div class="card flex justify-between border p-6">
+            <div class="card flex justify-between border rounded border-gray-400  p-6">
 
                 <div class="space-y-5">
 
@@ -169,7 +182,8 @@
                     </div>
                     <p class="status font-medium text-[#002C5C] bg-[#EEF4FF] px-2 py-3 w-38 text-center rounded">Not
                         Applied</p>
-                    <p class="description text-[14px] text-[#64748B]">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
+                    <p class="description text-[14px] text-[#64748B]">Design and maintain scalable backend systems using
+                        Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
                     <div>
                         <button
                             class="interview-btn font-semibold text-green-500 border rounded-sm px-4 py-2">Interview</button>
@@ -179,12 +193,14 @@
                 </div>
 
                 <div>
-                    <button class="delete-btn">delete</button>
+                    <button class="delete-btn cursor-pointer bg-gray-200 w-10 h-10 rounded-[50%] p-1.5">
+                       <i class="fa-regular fa-trash-can text-red-400"></i>
+                    </button>
                 </div>
             </div>
 
             <!-- card-05 -->
-            <div class="card flex justify-between border p-6">
+            <div class="card flex justify-between border rounded border-gray-400  p-6">
 
                 <div class="space-y-5">
 
@@ -197,7 +213,8 @@
                     </div>
                     <p class="status font-medium text-[#002C5C] bg-[#EEF4FF] px-2 py-3 w-38 text-center rounded">Not
                         Applied</p>
-                    <p class="description text-[14px] text-[#64748B]">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
+                    <p class="description text-[14px] text-[#64748B]">Create beautiful and functional user interfaces
+                        for our suite of products. Strong design skills and frontend development expertise required.</p>
                     <div>
                         <button
                             class="interview-btn font-semibold text-green-500 border rounded-sm px-4 py-2">Interview</button>
@@ -207,12 +224,14 @@
                 </div>
 
                 <div>
-                    <button class="delete-btn">delete</button>
+                    <button class="delete-btn cursor-pointer bg-gray-200 w-10 h-10 rounded-[50%] p-1.5">
+                       <i class="fa-regular fa-trash-can text-red-400"></i>
+                    </button>
                 </div>
             </div>
 
             <!-- card-06 -->
-            <div class="card flex justify-between border p-6">
+            <div class="card flex justify-between border rounded border-gray-400  p-6">
 
                 <div class="space-y-5">
 
@@ -225,7 +244,9 @@
                     </div>
                     <p class="status font-medium text-[#002C5C] bg-[#EEF4FF] px-2 py-3 w-38 text-center rounded">Not
                         Applied</p>
-                    <p class="description text-[14px] text-[#64748B]">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
+                    <p class="description text-[14px] text-[#64748B]">Build enterprise applications with JavaScript and
+                        modern frameworks. We offer competitive compensation, health insurance, and professional
+                        development opportunities.</p>
                     <div>
                         <button
                             class="interview-btn font-semibold text-green-500 border rounded-sm px-4 py-2">Interview</button>
@@ -235,12 +256,14 @@
                 </div>
 
                 <div>
-                    <button class="delete-btn">delete</button>
+                    <button class="delete-btn cursor-pointer bg-gray-200 w-10 h-10 rounded-[50%] p-1.5">
+                      <i class="fa-regular fa-trash-can text-red-400"></i>
+                    </button>
                 </div>
             </div>
 
             <!-- card-07 -->
-            <div class="card flex justify-between border p-6">
+            <div class="card flex justify-between border rounded border-gray-400  p-6">
 
                 <div class="space-y-5">
 
@@ -253,7 +276,9 @@
                     </div>
                     <p class="status font-medium text-[#002C5C] bg-[#EEF4FF] px-2 py-3 w-38 text-center rounded">Not
                         Applied</p>
-                    <p class="description text-[14px] text-[#64748B]">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
+                    <p class="description text-[14px] text-[#64748B]">Join our fast-growing startup and work on our core
+                        platform. Experience with Node.js and React required. Great benefits and equity package
+                        included.</p>
                     <div>
                         <button
                             class="interview-btn font-semibold text-green-500 border rounded-sm px-4 py-2">Interview</button>
@@ -263,12 +288,14 @@
                 </div>
 
                 <div>
-                    <button class="delete-btn">delete</button>
+                    <button class="delete-btn cursor-pointer bg-gray-200 w-10 h-10 rounded-[50%] p-1.5">
+                       <i class="fa-regular fa-trash-can text-red-400"></i>
+                    </button>
                 </div>
             </div>
 
             <!-- card-08 -->
-            <div class="card flex justify-between border p-6">
+            <div class="card flex justify-between border rounded border-gray-400  p-6">
 
                 <div class="space-y-5">
 
@@ -277,11 +304,14 @@
                         <p class="skills text-[#64748B]">Senior Frontend Developer</p>
                     </div>
                     <div>
-                        <p class="remote text-[14px] text-[#64748B]">San Francisco, CA • Full-time • $130,000 - $175,000</p>
+                        <p class="remote text-[14px] text-[#64748B]">San Francisco, CA • Full-time • $130,000 - $175,000
+                        </p>
                     </div>
                     <p class="status font-medium text-[#002C5C] bg-[#EEF4FF] px-2 py-3 w-38 text-center rounded">Not
                         Applied</p>
-                    <p class="description text-[14px] text-[#64748B]">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
+                    <p class="description text-[14px] text-[#64748B]">We are looking for an experienced Frontend
+                        Developer to build scalable web applications using React and TypeScript. You will work with a
+                        talented team on cutting-edge projects.</p>
                     <div>
                         <button
                             class="interview-btn font-semibold text-green-500 border rounded-sm px-4 py-2">Interview</button>
@@ -291,7 +321,9 @@
                 </div>
 
                 <div>
-                    <button class="delete-btn">delete</button>
+                    <button class="delete-btn cursor-pointer bg-gray-200 w-10 h-10 rounded-[50%] p-1.5">
+                       <i class="fa-regular fa-trash-can text-red-400"></i>
+                    </button>
                 </div>
             </div>
 
