@@ -188,7 +188,7 @@ function renderInterview() {
 
     if (interviewlist.length === 0) {
         filtersection.innerHTML = `
-            <div class="text-center py-10 border border-dashed border-gray-400 rounded">
+            <div class="text-center py-10 border border-dashed border-gray-400 rounded mb-6">
                 <img src="./images/jobs.png" alt="No Jobs" class="mx-auto mb-4 w-16 opacity-50">
                 <p class="text-xl font-semibold text-gray-700">No Jobs Available</p>
                 <p class="text-gray-500">You haven't selected any jobs for interview yet.</p>
@@ -200,10 +200,10 @@ function renderInterview() {
     interviewlist.forEach(interview => {
 
         let div = document.createElement("div");
-        div.className = "card flex justify-between border rounded border-gray-400 p-6";
+        div.className = "card flex justify-between border rounded border-gray-400 p-6 mb-6";
 
         div.innerHTML = `
-            <div class="space-y-5">
+            <div class="space-y-5 ">
                 <div>
                     <h2 class="job-name font-semibold text-[#002C5C] leading-8">${interview.jobName}</h2>
                     <p class="skills text-[#64748B]">${interview.skills}</p>
@@ -211,14 +211,16 @@ function renderInterview() {
                 <div>
                     <p class="remote text-[14px] text-[#64748B]">${interview.remote}</p>
                 </div>
-                <p class="status font-medium text-[#002C5C] bg-[#EEF4FF] px-2 py-3 w-[150px] text-center rounded">
+                <p class="status font-medium text-[#002C5C] bg-[#EEF4FF] px-1 py-2 w-28 sm:px-2 sm:py-3 sm:w-38 text-center rounded">
                     Interview
                 </p>
                 <p class="description text-[14px] text-[#64748B]">${interview.description}</p>
-                <div>
-                    <button class="interview-btn font-semibold text-green-500 border rounded-sm px-4 py-2">Interview</button>
-                    <button class="reject-btn font-semibold text-red-500 border rounded-sm px-4 py-2">Rejected</button>
-                </div>
+                <div class="space-x-1">
+                        <button
+                            class="interview-btn font-semibold text-green-500 border rounded-sm px-2 py-1 sm:px-4 sm:py-2 ">Interview</button>
+                        <button
+                            class="reject-btn font-semibold text-red-500 border rounded-sm px-2 py-1 sm:px-4 sm:py-2">Rejected</button>
+                    </div>
             </div>
            <div>
                     <button class="delete-btn cursor-pointer bg-gray-200 w-10 h-10 rounded-[50%] p-1.5">
@@ -240,7 +242,7 @@ function renderRejected() {
 
     if (rejectedlist.length === 0) {
         filtersection.innerHTML = `
-            <div class="text-center border border-dashed border-gray-400 rounded py-10">
+            <div class="text-center border border-dashed border-gray-400 rounded py-10 mb-6">
                 <img src="./images/jobs.png" alt="No Jobs" class="mx-auto mb-4 w-16 opacity-50">
                 <p class="text-xl font-semibold text-gray-700">No Jobs Available</p>
                 <p class="text-gray-500">You haven't rejected any jobs yet.</p>
@@ -252,7 +254,7 @@ function renderRejected() {
     rejectedlist.forEach(rejected => {
 
         let div = document.createElement("div");
-        div.className = "card flex justify-between border rounded border-gray-400 p-6";
+        div.className = "card flex justify-between border rounded border-gray-400 p-6 mb-6";
 
         div.innerHTML = `
             <div class="space-y-5 ">
@@ -263,14 +265,16 @@ function renderRejected() {
                 <div>
                     <p class="remote text-[14px] text-[#64748B]">${rejected.remote}</p>
                 </div>
-                <p class="status font-medium text-[#002C5C] bg-[#EEF4FF] px-2 py-3 w-[150px] text-center rounded">
+                <p class="status font-medium text-[#002C5C] bg-[#EEF4FF] px-1 py-2 w-28 sm:px-2 sm:py-3 sm:w-38 text-center rounded">
                     Rejected
                 </p>
                 <p class="description text-[14px] text-[#64748B]">${rejected.description}</p>
-                <div>
-                    <button class="interview-btn font-semibold text-green-500 border rounded-sm px-4 py-2">Interview</button>
-                    <button class="reject-btn font-semibold text-red-500 border rounded-sm px-4 py-2">Rejected</button>
-                </div>
+               <div class="space-x-1">
+                        <button
+                            class="interview-btn font-semibold text-green-500 border rounded-sm px-2 py-1 sm:px-4 sm:py-2 ">Interview</button>
+                        <button
+                            class="reject-btn font-semibold text-red-500 border rounded-sm px-2 py-1 sm:px-4 sm:py-2">Rejected</button>
+                    </div>
             </div>
         <div>
                     <button class="delete-btn cursor-pointer bg-gray-200 w-10 h-10 rounded-[50%] p-1.5">
