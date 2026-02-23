@@ -16,7 +16,7 @@ const mainContainer = document.querySelector("main");
 const filtersection = document.getElementById("filtered-section");
 
 
-// ================= COUNT FUNCTION =================
+// count function
 
 function calculateCount() {
 
@@ -42,7 +42,7 @@ function calculateCount() {
 calculateCount();
 
 
-// ================= UPDATE MAIN CARD STATUS =================
+// main card status update 
 
 function updateMainCardStatus(jobName, newStatus) {
 
@@ -58,7 +58,7 @@ function updateMainCardStatus(jobName, newStatus) {
 }
 
 
-// ================= FILTER BUTTON STYLE =================
+// filter button style 
 
 function toggleStyle(id) {
 
@@ -94,7 +94,7 @@ function toggleStyle(id) {
 }
 
 
-// ================= MAIN EVENT DELEGATION =================
+// main event section
 
 mainContainer.addEventListener("click", function (event) {
 
@@ -107,7 +107,7 @@ mainContainer.addEventListener("click", function (event) {
     const description = parentNode.querySelector(".description").innerText;
 
 
-    // ================= INTERVIEW =================
+    // interview section
 
     if (event.target.classList.contains("interview-btn")) {
 
@@ -134,7 +134,7 @@ mainContainer.addEventListener("click", function (event) {
     }
 
 
-    // ================= REJECT =================
+    // reject section
 
     if (event.target.classList.contains("reject-btn")) {
 
@@ -161,7 +161,7 @@ mainContainer.addEventListener("click", function (event) {
     }
 
 
-    // ================= DELETE =================
+    // delete section
 
     const deleteBtn = event.target.closest(".delete-btn");
     if (deleteBtn) {
@@ -180,7 +180,7 @@ mainContainer.addEventListener("click", function (event) {
 });
 
 
-// ================= RENDER INTERVIEW =================
+// interview render section
 
 function renderInterview() {
 
@@ -188,7 +188,8 @@ function renderInterview() {
 
     if (interviewlist.length === 0) {
         filtersection.innerHTML = `
-            <div class="text-center py-10">
+            <div class="text-center py-10 border border-dashed border-gray-400 rounded">
+                <img src="./images/jobs.png" alt="No Jobs" class="mx-auto mb-4 w-16 opacity-50">
                 <p class="text-xl font-semibold text-gray-700">No Jobs Available</p>
                 <p class="text-gray-500">You haven't selected any jobs for interview yet.</p>
             </div>
@@ -199,7 +200,7 @@ function renderInterview() {
     interviewlist.forEach(interview => {
 
         let div = document.createElement("div");
-        div.className = "card flex justify-between border p-6";
+        div.className = "card flex justify-between border rounded border-gray-400 p-6";
 
         div.innerHTML = `
             <div class="space-y-5">
@@ -219,9 +220,11 @@ function renderInterview() {
                     <button class="reject-btn font-semibold text-red-500 border rounded-sm px-4 py-2">Rejected</button>
                 </div>
             </div>
-            <div>
-                <button class="delete-btn text-red-500 font-semibold">delete</button>
-            </div>
+           <div>
+                    <button class="delete-btn cursor-pointer bg-gray-200 w-10 h-10 rounded-[50%] p-1.5">
+                       <i class="fa-regular fa-trash-can text-red-400"></i>
+                    </button>
+                </div>
         `;
 
         filtersection.appendChild(div);
@@ -229,7 +232,7 @@ function renderInterview() {
 }
 
 
-// ================= RENDER REJECTED =================
+// rejected render section
 
 function renderRejected() {
 
@@ -237,7 +240,8 @@ function renderRejected() {
 
     if (rejectedlist.length === 0) {
         filtersection.innerHTML = `
-            <div class="text-center py-10">
+            <div class="text-center border border-dashed border-gray-400 rounded py-10">
+                <img src="./images/jobs.png" alt="No Jobs" class="mx-auto mb-4 w-16 opacity-50">
                 <p class="text-xl font-semibold text-gray-700">No Jobs Available</p>
                 <p class="text-gray-500">You haven't rejected any jobs yet.</p>
             </div>
@@ -248,10 +252,10 @@ function renderRejected() {
     rejectedlist.forEach(rejected => {
 
         let div = document.createElement("div");
-        div.className = "card flex justify-between border p-6";
+        div.className = "card flex justify-between border rounded border-gray-400 p-6";
 
         div.innerHTML = `
-            <div class="space-y-5">
+            <div class="space-y-5 ">
                 <div>
                     <h2 class="job-name font-semibold text-[#002C5C] leading-8">${rejected.jobName}</h2>
                     <p class="skills text-[#64748B]">${rejected.skills}</p>
@@ -268,9 +272,11 @@ function renderRejected() {
                     <button class="reject-btn font-semibold text-red-500 border rounded-sm px-4 py-2">Rejected</button>
                 </div>
             </div>
-            <div>
-                <button class="delete-btn text-red-500 font-semibold">delete</button>
-            </div>
+        <div>
+                    <button class="delete-btn cursor-pointer bg-gray-200 w-10 h-10 rounded-[50%] p-1.5">
+                       <i class="fa-regular fa-trash-can text-red-400"></i>
+                    </button>
+          </div>
         `;
 
         filtersection.appendChild(div);
