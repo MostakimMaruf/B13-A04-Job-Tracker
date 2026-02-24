@@ -66,6 +66,7 @@ Qustion 05 :  What is the difference between preventDefault() and stopPropagatio
 
 Answer: => 
           (i) preventDefault()
+          
                * Stops the default browser action          
                * Example: Prevent form submission or link navigation
           
